@@ -170,7 +170,7 @@ export class MeusAgendamentosComponent implements OnInit {
 
     this.carregando.set(true);
     this.agendamentoService
-      .getAgendamentosUsuario(usuario.id)
+      .fetchUserAppointments(usuario.id)
       .pipe(finalize(() => this.carregando.set(false)))
       .subscribe({
         next: (agendamentos) => {
@@ -257,7 +257,7 @@ export class MeusAgendamentosComponent implements OnInit {
     this.cancelando.set(true);
     this.confirmationService.close();
     this.agendamentoService
-      .cancelarAgendamento(this.agendamentoParaCancelar.id)
+      .cancelAppointment(this.agendamentoParaCancelar.id)
       .pipe(finalize(() => this.cancelando.set(false)))
       .subscribe({
         next: () => {

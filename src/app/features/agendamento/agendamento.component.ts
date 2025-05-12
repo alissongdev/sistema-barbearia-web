@@ -172,7 +172,7 @@ export class AgendamentoComponent implements OnInit {
 
     this.isLoadingSchedules.set(true);
     this.agendamentoService
-      .getHorariosDisponiveis(selectedDate)
+      .fetchAvailableTimes(selectedDate)
       .pipe(
         tap((horariosDisponiveis) => {
           const horariosBarbeiro = horariosDisponiveis.find(
@@ -224,7 +224,7 @@ export class AgendamentoComponent implements OnInit {
 
     this.isSchedulingInProgress.set(true);
     this.agendamentoService
-      .criarAgendamento(appointmentData)
+      .createAppointment(appointmentData)
       .pipe(
         tap(() => {
           this.messageService.add({

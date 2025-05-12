@@ -112,7 +112,7 @@ describe('AgendamentoComponent', () => {
 
       component.loadAvailableTimeSlots();
 
-      expect(agendamentoService.getHorariosDisponiveis).not.toHaveBeenCalled();
+      expect(agendamentoService.fetchAvailableTimes).not.toHaveBeenCalled();
       expect(component.isLoadingSchedules()).toBeFalse();
     });
 
@@ -143,7 +143,7 @@ describe('AgendamentoComponent', () => {
         barbeiro: mockBarbeiro,
       });
 
-      agendamentoService.getHorariosDisponiveis.and.returnValue(
+      agendamentoService.fetchAvailableTimes.and.returnValue(
         of(mockHorariosResponse)
       );
 
@@ -155,7 +155,7 @@ describe('AgendamentoComponent', () => {
 
       component.loadAvailableTimeSlots();
 
-      expect(agendamentoService.getHorariosDisponiveis).toHaveBeenCalledWith(
+      expect(agendamentoService.fetchAvailableTimes).toHaveBeenCalledWith(
         testDate
       );
       expect(component.isLoadingSchedules()).toBeFalse();
@@ -193,13 +193,13 @@ describe('AgendamentoComponent', () => {
         barbeiro: mockBarbeiro,
       });
 
-      agendamentoService.getHorariosDisponiveis.and.returnValue(
+      agendamentoService.fetchAvailableTimes.and.returnValue(
         of(mockHorariosResponse)
       );
 
       component.loadAvailableTimeSlots();
 
-      expect(agendamentoService.getHorariosDisponiveis).toHaveBeenCalledWith(
+      expect(agendamentoService.fetchAvailableTimes).toHaveBeenCalledWith(
         testDate
       );
       expect(component.isLoadingSchedules()).toBeFalse();
