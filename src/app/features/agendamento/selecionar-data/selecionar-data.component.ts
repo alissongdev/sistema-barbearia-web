@@ -13,7 +13,7 @@ import { DatePickerModule } from 'primeng/datepicker';
       <p-datePicker
         [formControl]="dataControl"
         [inline]="true"
-        [showButtonBar]="false"
+        [showButtonBar]="true"
         [minDate]="minDate"
         [maxDate]="maxDate"
         styleClass="w-full"
