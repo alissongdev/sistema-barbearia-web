@@ -31,6 +31,23 @@ ng generate --help
 To build the project run:
 
 ```bash
+npm run build
+```
+
+For a production build with secure credential handling:
+
+```bash
+# Configure environment variables for API credentials first
+export API_USERNAME="your-prod-username"
+export API_PASSWORD="your-prod-password"
+
+# Then run the secure build script
+npm run build:secure
+```
+
+See [Credentials Configuration](/docs/CREDENTIALS-CONFIG.md) for more details on securely managing API credentials.
+
+```bash
 ng build
 ```
 

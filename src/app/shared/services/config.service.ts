@@ -18,6 +18,7 @@ export class ConfigService {
   private http = inject(HttpClient);
   private config: AppConfig | null = null;
   private configUrl = 'assets/config/config.json';
+  private devConfigUrl = 'assets/config/config.dev.json';
 
   private fallbackConfig: AppConfig = {
     apiCredentials: {
@@ -36,6 +37,22 @@ export class ConfigService {
     }
 
     try {
+      if (!environment.production) {
+        try {
+          this.config = await lastValueFrom(
+            this.http.get<AppConfig>(this.devConfigUrl)
+          );
+          console.info(
+            'Configuração de desenvolvimento carregada com sucesso.'
+          );
+          return this.config;
+        } catch (devConfigError) {
+          console.warn(
+            'Arquivo de configuração de desenvolvimento não encontrado, usando arquivo padrão.'
+          );
+        }
+      }
+
       this.config = await lastValueFrom(
         this.http.get<AppConfig>(this.configUrl).pipe(
           catchError(() => {

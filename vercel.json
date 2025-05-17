@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "buildCommand": "npm run build:vercel",
+        "outputDirectory": "dist/sistema-barbearia-web/browser"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "http://viewsource-001-site1.ptempurl.com/api/$1"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*\\.[a-z0-9]{8}\\.js)",
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*\\.[a-z0-9]{8}\\.css)",
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*\\.[a-z0-9]{8}\\.txt)",
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}

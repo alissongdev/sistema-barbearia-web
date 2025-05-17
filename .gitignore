@@ -11,6 +11,14 @@
 npm-debug.log
 yarn-error.log
 
+# Environment variables
+.env
+
+# Configuration files with credentials
+/src/assets/config/config.json
+/src/assets/config/config.prod.json
+/src/assets/config/config.dev.json
+
 # IDEs and editors
 .idea/
 .project
