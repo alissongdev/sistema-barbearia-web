@@ -38,13 +38,7 @@ O projeto inclui uma configuração especial para deploy na Vercel:
    - `VERCEL_API_USERNAME`: Nome de usuário da API em produção
    - `VERCEL_API_PASSWORD`: Senha da API em produção
 
-2. A configuração no arquivo `vercel.json` já está preparada para:
-
-   - Executar o script de build específico para a Vercel
-   - Configurar o proxy para a API
-   - Garantir que as rotas funcionem corretamente para a aplicação Angular
-
-3. Durante o processo de build, o script `vercel-build.sh` automaticamente:
+2. Durante o processo de build, o script `vercel-build.sh` automaticamente:
    - Cria o arquivo de configuração com as credenciais das variáveis de ambiente
    - Substitui os marcadores nos arquivos compilados
 
