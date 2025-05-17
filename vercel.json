@@ -21,12 +21,5 @@
         }
       ]
     }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "methods": ["OPTIONS"],
-      "dest": "http://viewsource-001-site1.ptempurl.com/api/$1"
-    }
   ]
 }
