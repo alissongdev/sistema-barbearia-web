@@ -9,6 +9,7 @@ export interface AppConfig {
     username: string;
     password: string;
   };
+  apiUrl?: string;
 }
 
 @Injectable({
@@ -25,6 +26,7 @@ export class ConfigService {
       username: environment.apiUsername || '',
       password: environment.apiPassword || '',
     },
+    apiUrl: environment.apiUrl || 'http://viewsource-001-site1.ptempurl.com',
   };
 
   async initialize(): Promise<void> {

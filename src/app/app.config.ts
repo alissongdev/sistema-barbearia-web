@@ -10,7 +10,6 @@ import {
 import { routes } from './app.routes';
 import { definePreset } from '@primeng/themes';
 import Aura from '@primeng/themes/aura';
-import { API_CONFIG, apiConfig } from './shared/config/api.config';
 import { authInterceptor } from './shared/interceptors/auth.interceptor';
 import { provideAppInitialization } from './app.initializer';
 
@@ -23,7 +22,6 @@ export const appConfig: ApplicationConfig = {
       withInterceptorsFromDi(),
       withInterceptors([authInterceptor])
     ),
-    { provide: API_CONFIG, useValue: apiConfig },
     provideAppInitialization(),
     providePrimeNG({
       theme: {
