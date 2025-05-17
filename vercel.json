@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "http://viewsource-001-site1.ptempurl.com/api/:path*"
+      "destination": "https://viewsource-001-site1.ptempurl.com/api/:path*"
     }
   ],
   "headers": [

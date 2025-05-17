@@ -23,7 +23,7 @@ cat > dist/sistema-barbearia-web/browser/assets/config/config.json << EOF
     "username": "${VERCEL_API_USERNAME:-}",
     "password": "${VERCEL_API_PASSWORD:-}"
   },
-  "apiUrl": "http://viewsource-001-site1.ptempurl.com"
+  "apiUrl": "https://viewsource-001-site1.ptempurl.com"
 }
 EOF
 

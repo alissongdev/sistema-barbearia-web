@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://viewsource-001-site1.ptempurl.com",
+    "target": "https://viewsource-001-site1.ptempurl.com",
     "secure": false,
     "changeOrigin": true
   }

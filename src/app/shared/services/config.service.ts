@@ -26,7 +26,7 @@ export class ConfigService {
       username: environment.apiUsername || '',
       password: environment.apiPassword || '',
     },
-    apiUrl: environment.apiUrl || 'http://viewsource-001-site1.ptempurl.com',
+    apiUrl: environment.apiUrl || 'https://viewsource-001-site1.ptempurl.com',
   };
 
   async initialize(): Promise<void> {
